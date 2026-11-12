@@ -1,6 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Cours } from '../composants/liste-cours/liste-cours';
-
+import { Cours } from '../donnees/cours';
 @Pipe({ name: 'filtreCours', standalone: true })
 export class FiltreCoursPipe implements PipeTransform {
   transform(cours: Cours[], recherche: string): Cours[] {

@@ -18,7 +18,7 @@
         <p>Durée: {{ c.duree }}</p>
         <p>Places disponibles: {{ c.places }}</p>
     </article>
-    } @empty {
+    <a [routerLink]="['/cours', c.id]">Voir le détail</a> } @empty {
     <p class="liste-vide">Aucun cours ne correspond à la recherche.</p>
     }
 </section>//
