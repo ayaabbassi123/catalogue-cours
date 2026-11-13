@@ -1,21 +1,12 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MesInscriptions } from './mes-inscriptions';
+import { Component, inject } from '@angular/core';
+import { Session } from '../../services/session';
 
-describe('MesInscriptions', () => {
-  let component: MesInscriptions;
-  let fixture: ComponentFixture<MesInscriptions>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [MesInscriptions],
-    }).compileComponents();
-
-    fixture = TestBed.createComponent(MesInscriptions);
-    component = fixture.componentInstance;
-    await fixture.whenStable();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+@Component({
+  selector: 'app-mes-inscriptions',
+  imports: [],
+  templateUrl: './mes-inscriptions.html',
+  styleUrl: './mes-inscriptions.css',
+})
+export class MesInscriptions {
+  session = inject(Session);
+}
