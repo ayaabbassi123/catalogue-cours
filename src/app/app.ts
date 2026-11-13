@@ -9,6 +9,8 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { Session } from './services/session';
+import { Inscriptions } from './services/inscriptions';
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -25,7 +27,6 @@ import { Session } from './services/session';
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-
 export class App {
   title = 'catalogue-cours';
   coursSelectionne: Cours | null = null;
@@ -33,11 +34,13 @@ export class App {
   onSelectionCours(c: Cours) {
     this.coursSelectionne = c;
   }
-  session = inject(Session);
-private router = inject(Router);
 
-deconnecter() {
-  this.session.deconnecter();
-  this.router.navigateByUrl('/');
-}
+  session = inject(Session);
+  private router = inject(Router);
+  inscriptions = inject(Inscriptions); 
+
+  deconnecter() {
+    this.session.deconnecter();
+    this.router.navigateByUrl('/');
+  }
 }

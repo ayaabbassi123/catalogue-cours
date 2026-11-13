@@ -1,5 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Session } from '../../services/session';
+import { Inscriptions } from '../../services/inscriptions';
+import { Catalogue } from '../../services/catalogue';
 
 @Component({
   selector: 'app-mes-inscriptions',
@@ -10,4 +12,7 @@ import { Session } from '../../services/session';
 })
 export class MesInscriptions {
   session = inject(Session);
+  catalogue = inject(Catalogue);
+inscriptions = inject(Inscriptions);
 }
+

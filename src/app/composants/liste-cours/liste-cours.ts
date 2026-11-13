@@ -22,7 +22,7 @@ export class ListeCoursComponent {
     @Output() coursSelectionne = new EventEmitter<Cours>();
     coursActif: Cours | null = null;
 
-  cours: Cours[] = COURS;
+  
 
     selectionner(c: Cours) {
     this.coursActif = c;

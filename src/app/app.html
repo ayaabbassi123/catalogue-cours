@@ -3,10 +3,11 @@
 <app-detail-cours [cours]="coursSelectionne"></app-detail-cours>
 <app-en-tete></app-en-tete>
 <nav class="menu">
-    <a routerLink="/" routerLinkActive="actif" [routerLinkActiveOptions]="{ exact: 
-true }">Accueil</a>
+    <a routerLink="/" routerLinkActive="actif" [routerLinkActiveOptions]="{ exact: true }">Accueil</a>
     <a routerLink="/cours" routerLinkActive="actif">Catalogue</a>
-    <a routerLink="/mes-inscriptions" routerLinkActive="actif">Mes inscriptions</a>
+    <a routerLink="/mes-inscriptions" routerLinkActive="actif">
+    Mes inscriptions ({{ inscriptions.liste().length }})
+  </a>
     <a routerLink="/connexion" routerLinkActive="actif">Connexion</a>
 </nav>
 <main>
@@ -21,3 +22,6 @@ true }">Accueil</a>
 } @if (session.connecte()) {
 <button (click)="deconnecter()">Déconnexion ({{ session.nom() }})</button> } @else {
 <a routerLink="/connexion" routerLinkActive="actif">Connexion</a> }
+<a routerLink="/mes-inscriptions" routerLinkActive="actif">
+  Mes inscriptions ({{ inscriptions.liste().length }})
+</a>
