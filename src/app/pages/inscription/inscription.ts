@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { COURS, Cours } from './../donnees/cours';
+import { COURS, Cours } from '../../donnees/cours';
 import { Session } from '../../services/session';
 import { nomComplet } from '../../validators/nom-complet';
 
@@ -15,6 +15,10 @@ export class Inscription implements OnInit {
   private session = inject(Session);
   @Input() id = '';
   confirmation = '';
+  private catalogue = inject(Catalogue);
+get cours(): Cours | undefined {
+ return this.catalogue.trouver(Number(this.id));
+}
 
   form = new FormGroup({
     nom: new FormControl('', [Validators.required, nomComplet]),
