@@ -11,7 +11,6 @@ export const routes: Routes = [
   { path: 'cours', component: ListeCoursComponent, title: 'Catalogue' },
   { path: 'cours/:id', component: PageDetail, title: 'Détail du cours' },
   { path: 'connexion', component: Connexion, title: 'Connexion' },
-   { path: '**', component: Introuvable, title: 'Page introuvable' },
  {
  path: 'mes-inscriptions',
  loadComponent: () =>
@@ -20,4 +19,5 @@ m.MesInscriptions),
  canActivate: [authGuard],
  title: 'Mes inscriptions',
  },
+ { path: '**', component: Introuvable, title: 'Page introuvable' }
 ];  
